@@ -1,0 +1,33 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+autoload -Uz promptinit
+promptinit
+prompt steeef
+
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/kazuha.fujimoto/.rd/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/unzip/bin:$PATH"
+export PATH="/usr/local/opt/rsync/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+## History Setting
+# メモリに保存される履歴の件数
+export HISTSIZE=1000
+# 履歴ファイルに保存される履歴の件数
+
+. "$HOME/.local/bin/env"

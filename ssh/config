@@ -1,0 +1,56 @@
+Host ims-ope02
+	HostName ims-ope02.plus.so-net.ne.jp
+	User ep001738
+
+Host pope02
+        HostName pope02.plus.so-net.ne.jp
+        User ep001738
+
+Host isp-chat-toold
+        HostName isp-chat-toold.plus.so-net.ne.jp
+        User ep001738
+
+Host log-fuji01t
+	HostName log-fuji01t.plus.so-net.ne.jp
+	User root
+
+Host sope02
+	HostName sope02.plus.so-net.ne.jp
+	User ep001738
+
+Host ims-log01.plus.so-net.ne.jp
+	HostName ims-log01.plus.so-net.ne.jp
+	User root
+	IdentityFile ~/.ssh/id_ims_job01
+
+Host 172.16.201.12
+	KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+   	HostkeyAlgorithms +ssh-rsa
+   	PubkeyAcceptedKeyTypes +ssh-rsa
+	StrictHostKeyChecking=no
+	IdentityFile ~/.ssh/id_ims_job01
+
+Host CHATBOT_chatbot-dataloader.ssh.github.com
+    Hostname ssh.github.com
+    Port 443
+    IdentityFile ~/.ssh/CHATBOT_chatbot-dataloader_id_ecdsa
+    ProxyCommand corkscrew com-pxy1.plus.so-net.ne.jp 8089 %h %p
+
+Host SONETPLUS_ansible-sir-pxyXX.ssh.github.com
+    Hostname ssh.github.com
+    Port 443
+	IdentityFile ~/.ssh/SONETPLUS_ansible-sir-pxyXX_id_ed25519
+    ProxyCommand corkscrew com-pxy1.plus.so-net.ne.jp 8089 %h %p
+
+Host SONETPLUS_sirius_proxy_inventory_tool_reports.ssh.github.com
+    Hostname ssh.github.com
+    Port 443
+	IdentityFile ~/.ssh/SONETPLUS_sirius_proxy_inventory_tool_reports_id_ed25519
+    ProxyCommand corkscrew com-pxy1.plus.so-net.ne.jp 8089 %h %p
+
+
+Host github.com
+	IdentityFile ~/.ssh/id_ed25519
+
+Host *
+	User ep001738
